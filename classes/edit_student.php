@@ -1,14 +1,11 @@
 <?php
 
-include_once 'Database.php';
-include_once 'Student.php';
-
-
-$database = new Database();
-$db = $database->getConnection();
-
-$student = new Student($db);
-
+    include_once 'Database.php';
+    include_once 'Student.php';
+    
+    $database = new Database();
+    $db = $database->getConnection();
+    $student = new Student($db);
 
 if (isset($_GET['id'])) {
     $student->id = $_GET['id'];
@@ -26,7 +23,6 @@ if (isset($_GET['id'])) {
     $student->email = $row['email'];
     $student->phone = $row['phone'];
 }
-
 
 if ($_POST) {
     $student->name = $_POST['name'];
